@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import type {Node} from 'react';
 import {Provider} from 'react-redux';
 import {NativeModules} from "react-native";
@@ -13,7 +13,9 @@ if (UIManager.setLayoutAnimationEnabledExperimental) {
 }
 
 const App: () => Node = () => {
-  React.useEffect(() => {});
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <Provider store={store}>
       <MainNavigator />

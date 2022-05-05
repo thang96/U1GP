@@ -2,23 +2,25 @@ import React, {useState} from 'react';
 import {RNCamera} from 'react-native-camera';
 import {View, TouchableOpacity, StyleSheet, Text} from 'react-native';
 import PendingView from './PendingView';
-import { useNavigation } from '@react-navigation/native';
 function CameraUI(props) {
   const [pausePreview, setPausePreview] = useState(false);
-  const navigation = useNavigation()
+  const {navigation, router} = props;
+  const {navigate, goBack} = navigation;
   const takePicture = async function (camera) {
     const options = {quality: 0.5, base64: true};
     const data = await camera.takePictureAsync(options);
     const source = data.uri;
     if (source) {
       await camera.pausePreview();
+      // console.log('picture source', data);
+
       setPausePreview(!pausePreview);
     }
   };
 
   const resumePicture = async function (camera) {
     await camera.resumePreview();
-    navigation.goBack()
+    navigate('RegisterToCompete01');
     setPausePreview(!pausePreview);
   };
   return (
@@ -50,15 +52,15 @@ function CameraUI(props) {
                 <TouchableOpacity
                   style={styles.button}
                   onPress={() => resumePicture(camera)}>
-                  <Text style={{fontSize: 14,color:'black'}}>保存</Text>
+                  <Text>Aceptar</Text>
                 </TouchableOpacity>
               ) : null}
-              {pausePreview==false&&<TouchableOpacity
+
+              <TouchableOpacity
                 onPress={() => takePicture(camera)}
                 style={styles.button}>
-                <Text style={{fontSize: 14,color:'black'}}>写真を撮る</Text>
-              </TouchableOpacity>}
-              
+                <Text style={{fontSize: 14}}> Chụp </Text>
+              </TouchableOpacity>
             </View>
           );
         }}
@@ -80,7 +82,7 @@ const styles = StyleSheet.create({
   button: {
     flex: 0,
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: 5,
     padding: 15,
     paddingHorizontal: 20,
     alignSelf: 'center',

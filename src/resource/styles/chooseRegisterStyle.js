@@ -2,8 +2,8 @@ import {Platform, StyleSheet} from 'react-native';
 import constant from '../../constants/constant';
 import colors from '../../constants/colors';
 const stylesChooseRegister = StyleSheet.create({
-    container: {flex: 1},
-  viewcontainer: {flex: 1, flexDirection: 'column'},
+    container: {flex: 1, backgroundColor: colors.white},
+  viewcontainer: {flex: 1, alignItems: 'center'},
   viewTouchBar: {
     flexDirection: 'row',
     height: 56,

@@ -10,5 +10,9 @@ export default{
     settings: require('../assets/icon/icon_settings.png'),
     sortDow: require('../assets/icon/icon_sort_down.png'),
     user:require('../assets/icon/icon_user.png'),
-    question:require('../assets/icon/icon_question.png')
+    question:require('../resource/images/icon-question.png'),
+    like:require('../assets/icon/icon_like.png'),
+    specialLike:require('../assets/icon/icon_special_like.png'),
+    next:require('../assets/icon/icon_next.png'),
+    cham : require('../assets/icon/icon_cham.png')
   }

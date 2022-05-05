@@ -21,17 +21,19 @@ const TextInputCustomComponent = ({
   errorValidate,
   styleCustom,
   styleContainer,
+  isShadow = true,
   maxLength,
   isPassword = false,
   ...props
 }) => {
   return (
-    <View style={{width: '100%'}}>
+    <View style={{ flex: 1}}>
       <View
         style={[
           stylesInput.container,
           styleContainer,
           error && stylesInput.inputError,
+          {shadow: isShadow ? {...commonStyle.shadow} : ''}
         ]}>
         <TextInput
           {...props}
@@ -54,7 +56,7 @@ const TextInputCustomComponent = ({
 
 const stylesInput = StyleSheet.create({
   container: {
-    borderColor: colors.colorInput,
+    borderColor: colors.borderColor,
     borderWidth: 1,
     width: '100%',
     paddingLeft: 10,
@@ -62,12 +64,12 @@ const stylesInput = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: colors.white,
     marginVertical: 12,
-    ...commonStyle.shadow,
   },
   textInput: {
-    height: 50,
+    height:Platform.OS === 'ios' ? 35: 40,
     width: '100%',
     marginTop: 4,
+    color:'rgb(65,65,65)'
   },
   inputError: {
     borderWidth: 2,

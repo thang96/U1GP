@@ -131,6 +131,15 @@ const commonStyle = StyleSheet.create({
   },
   mt20: {
     marginTop: 20,
+  },
+  styleDropDown: {
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: colors.borderColor,
+    height: 40,
+    flex: 1,
+    justifyContent:'center',
+    alignContent:'center'
   }
 });
 

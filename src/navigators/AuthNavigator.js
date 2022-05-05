@@ -13,6 +13,27 @@ const Stack = createStackNavigator();
 function AuthNavigator(props) {
   return (
     <Stack.Navigator
+      // screenOptions={{
+      //   headerShown: true,
+      //   headerBackTitleVisible: false,
+      //   headerStyle: {
+      //     backgroundColor: 'black',
+      //   },
+      //   headerTitleStyle: {
+      //     color: 'white'
+      //   },
+      //   headerTintColor: 'white',
+      //   headerTitleAlign: 'center',
+      //   headerRight: () => (
+      //     <TouchableOpacity
+      //       onPress={() => {
+
+      //       }}
+      //       style={{marginRight: 20}}>
+      //       <IconSetting />
+      //     </TouchableOpacity>
+      //   ),
+      // }}
       >
       <Stack.Screen
         name={routeNames.LOG_IN}

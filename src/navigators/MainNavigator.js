@@ -3,22 +3,14 @@ import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {connect} from 'react-redux';
 import LoadingComponent from '../components/LoadingComponent';
-import Splash from '../containers/Splash';
 import {loadAppStateAction} from '../actions/appStateActions';
 import {navigationRef} from '../actions/navigationActions';
 import NetworkService, {networkRef} from '../repositories/remote/network';
 import TabNavigator from './TabNavigator';
+import U1GPTop01 from '../containers/U1GPTop04/U1GPTop01';
 
 function MainNavigator(props) {
   const [splash, setSplash] = useState(true);
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setSplash(false);
-    }, 2000);
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, []);
 
   const renderNavigator = () => {
     const {appState} = props;
@@ -27,7 +19,7 @@ function MainNavigator(props) {
     if (appState.isLoggedIn) {
       return <TabNavigator />;
     }
-    return splash?<Splash/> : <TabNavigator/>;
+    return <TabNavigator/>;
   };
 
   const renderLoading = () => {

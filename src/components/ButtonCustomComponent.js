@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Platform, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import colors from '../constants/colors';
 const TIME_LOCK_BUTTON = 2000;
 
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   textButton: {
     fontSize: 18,
     color: colors.white,
-    padding: 12,
+    padding: Platform.OS === 'ios' ? 12 : 6,
     fontWeight: 'bold',
   },
 });

@@ -9,7 +9,6 @@ const colors = {
   labelTabbar: '#b3b0b0',
   dark: '#444444',
   black: '#000',
-  borderColor: '#c0c0c0',
   bgSearch: '#e7e7e9',
   red: '#ff0000',
   lightRed: '#ce3c3e',
@@ -91,6 +90,9 @@ const colors = {
   colorInput: '#AAAAAA',
   btnColor: '#4DABC4',
   colorTextTitle: '#77766C',
+  colorPageText: '#5F5F5F',
+  btnNext: '#969696',
+  borderColor: '#707070',
 };
 
 export default colors;
